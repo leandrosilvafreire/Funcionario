@@ -1,0 +1,13 @@
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\bin\Debug\pjFuncionario.exe.config
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\bin\Debug\pjFuncionario.exe
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\bin\Debug\pjFuncionario.pdb
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\bin\Debug\pjFuncionario.xml
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.frmLogin.resources
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.frmPrincipal.resources
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.Resources.resources
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.vbproj.GenerateResource.Cache
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.exe
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.xml
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.pdb
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.frmFuncionarios.resources
+D:\Programacao\visual basic\pjFuncionario\pjFuncionario\obj\Debug\pjFuncionario.frmUsuario.resources
