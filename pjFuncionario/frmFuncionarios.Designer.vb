@@ -39,19 +39,10 @@ Partial Class frmFuncionarios
         Me.tcFuncionario = New System.Windows.Forms.TabControl()
         Me.tpConsulta = New System.Windows.Forms.TabPage()
         Me.dgvFuncionario = New System.Windows.Forms.DataGridView()
-        Me.column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.lblNome = New System.Windows.Forms.Label()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.tpCadastro = New System.Windows.Forms.TabPage()
-        Me.mtbDatacad = New System.Windows.Forms.MaskedTextBox()
-        Me.mtbDataNasc = New System.Windows.Forms.MaskedTextBox()
         Me.btnSair = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
@@ -72,6 +63,21 @@ Partial Class frmFuncionarios
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Tb_funcionarioTableAdapter = New pjFuncionario.bd_industriaDataSetTableAdapters.tb_funcionarioTableAdapter()
         Me.TableAdapterManager = New pjFuncionario.bd_industriaDataSetTableAdapters.TableAdapterManager()
+        Me.column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtpDataNasc = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDataCad = New System.Windows.Forms.DateTimePicker()
         lblCodigo = New System.Windows.Forms.Label()
         lblNomeI = New System.Windows.Forms.Label()
         lblEndereco = New System.Windows.Forms.Label()
@@ -252,70 +258,17 @@ Partial Class frmFuncionarios
         '
         Me.dgvFuncionario.AllowUserToAddRows = False
         Me.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFuncionario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.column2, Me.column3, Me.column4, Me.column5, Me.column6, Me.column7, Me.column8})
-        Me.dgvFuncionario.Location = New System.Drawing.Point(22, 65)
+        Me.dgvFuncionario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.column1, Me.column2, Me.column3, Me.column4, Me.column5, Me.column6, Me.column7, Me.column8, Me.column9, Me.column10, Me.Column11, Me.Column12, Me.column13})
+        Me.dgvFuncionario.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvFuncionario.Location = New System.Drawing.Point(3, 85)
         Me.dgvFuncionario.Name = "dgvFuncionario"
         Me.dgvFuncionario.ReadOnly = True
         Me.dgvFuncionario.RowHeadersVisible = False
         Me.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvFuncionario.Size = New System.Drawing.Size(563, 258)
-        Me.dgvFuncionario.TabIndex = 3
-        '
-        'column2
-        '
-        Me.column2.DataPropertyName = "nome"
-        Me.column2.HeaderText = "Nome"
-        Me.column2.Name = "column2"
-        Me.column2.ReadOnly = True
-        Me.column2.Width = 60
-        '
-        'column3
-        '
-        Me.column3.DataPropertyName = "Endereco"
-        Me.column3.HeaderText = "Endereço"
-        Me.column3.Name = "column3"
-        Me.column3.ReadOnly = True
-        Me.column3.Width = 78
-        '
-        'column4
-        '
-        Me.column4.DataPropertyName = "numero"
-        Me.column4.HeaderText = "Número"
-        Me.column4.Name = "column4"
-        Me.column4.ReadOnly = True
-        Me.column4.Width = 69
-        '
-        'column5
-        '
-        Me.column5.DataPropertyName = "cidade"
-        Me.column5.HeaderText = "Cidade"
-        Me.column5.Name = "column5"
-        Me.column5.ReadOnly = True
-        Me.column5.Width = 65
-        '
-        'column6
-        '
-        Me.column6.DataPropertyName = "estado"
-        Me.column6.HeaderText = "Estado"
-        Me.column6.Name = "column6"
-        Me.column6.ReadOnly = True
-        Me.column6.Width = 65
-        '
-        'column7
-        '
-        Me.column7.DataPropertyName = "cpf"
-        Me.column7.HeaderText = "CPF"
-        Me.column7.Name = "column7"
-        Me.column7.ReadOnly = True
-        Me.column7.Width = 52
-        '
-        'column8
-        '
-        Me.column8.DataPropertyName = "dt_cadastro"
-        Me.column8.HeaderText = "Data Cadastro"
-        Me.column8.Name = "column8"
-        Me.column8.ReadOnly = True
+        Me.dgvFuncionario.Size = New System.Drawing.Size(592, 258)
+        Me.dgvFuncionario.TabIndex = 159
         '
         'btnPesquisar
         '
@@ -347,8 +300,8 @@ Partial Class frmFuncionarios
         'tpCadastro
         '
         Me.tpCadastro.AutoScroll = True
-        Me.tpCadastro.Controls.Add(Me.mtbDatacad)
-        Me.tpCadastro.Controls.Add(Me.mtbDataNasc)
+        Me.tpCadastro.Controls.Add(Me.dtpDataCad)
+        Me.tpCadastro.Controls.Add(Me.dtpDataNasc)
         Me.tpCadastro.Controls.Add(Me.btnSair)
         Me.tpCadastro.Controls.Add(Me.btnCancelar)
         Me.tpCadastro.Controls.Add(Me.btnExcluir)
@@ -385,22 +338,6 @@ Partial Class frmFuncionarios
         Me.tpCadastro.TabIndex = 1
         Me.tpCadastro.Text = "Cadastro"
         Me.tpCadastro.UseVisualStyleBackColor = True
-        '
-        'mtbDatacad
-        '
-        Me.mtbDatacad.Location = New System.Drawing.Point(128, 213)
-        Me.mtbDatacad.Mask = "00/00/0000"
-        Me.mtbDatacad.Name = "mtbDatacad"
-        Me.mtbDatacad.Size = New System.Drawing.Size(100, 20)
-        Me.mtbDatacad.TabIndex = 36
-        '
-        'mtbDataNasc
-        '
-        Me.mtbDataNasc.Location = New System.Drawing.Point(487, 168)
-        Me.mtbDataNasc.Mask = "00/00/0000"
-        Me.mtbDataNasc.Name = "mtbDataNasc"
-        Me.mtbDataNasc.Size = New System.Drawing.Size(100, 20)
-        Me.mtbDataNasc.TabIndex = 35
         '
         'btnSair
         '
@@ -459,6 +396,7 @@ Partial Class frmFuncionarios
         Me.mtbCpf.Name = "mtbCpf"
         Me.mtbCpf.Size = New System.Drawing.Size(95, 20)
         Me.mtbCpf.TabIndex = 27
+        Me.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'mtbCep
         '
@@ -467,6 +405,7 @@ Partial Class frmFuncionarios
         Me.mtbCep.Name = "mtbCep"
         Me.mtbCep.Size = New System.Drawing.Size(96, 20)
         Me.mtbCep.TabIndex = 26
+        Me.mtbCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'txtRg
         '
@@ -545,7 +484,6 @@ Partial Class frmFuncionarios
         'txtCodigo
         '
         Me.txtCodigo.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtCodigo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "id_funcionario", True))
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Location = New System.Drawing.Point(70, 27)
         Me.txtCodigo.Name = "txtCodigo"
@@ -563,6 +501,126 @@ Partial Class frmFuncionarios
         Me.TableAdapterManager.tb_funcionarioTableAdapter = Me.Tb_funcionarioTableAdapter
         Me.TableAdapterManager.tb_usuarioTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = pjFuncionario.bd_industriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'column1
+        '
+        Me.column1.DataPropertyName = "id_funcionario"
+        Me.column1.HeaderText = "Código"
+        Me.column1.Name = "column1"
+        Me.column1.ReadOnly = True
+        Me.column1.Width = 65
+        '
+        'column2
+        '
+        Me.column2.DataPropertyName = "nome"
+        Me.column2.HeaderText = "Nome"
+        Me.column2.Name = "column2"
+        Me.column2.ReadOnly = True
+        Me.column2.Width = 60
+        '
+        'column3
+        '
+        Me.column3.DataPropertyName = "Endereco"
+        Me.column3.HeaderText = "Endereço"
+        Me.column3.Name = "column3"
+        Me.column3.ReadOnly = True
+        Me.column3.Width = 78
+        '
+        'column4
+        '
+        Me.column4.DataPropertyName = "numero"
+        Me.column4.HeaderText = "Número"
+        Me.column4.Name = "column4"
+        Me.column4.ReadOnly = True
+        Me.column4.Width = 69
+        '
+        'column5
+        '
+        Me.column5.DataPropertyName = "bairro"
+        Me.column5.HeaderText = "Bairro"
+        Me.column5.Name = "column5"
+        Me.column5.ReadOnly = True
+        Me.column5.Width = 59
+        '
+        'column6
+        '
+        Me.column6.DataPropertyName = "complemento"
+        Me.column6.HeaderText = "Complemento"
+        Me.column6.Name = "column6"
+        Me.column6.ReadOnly = True
+        Me.column6.Width = 96
+        '
+        'column7
+        '
+        Me.column7.DataPropertyName = "cep"
+        Me.column7.HeaderText = "Cep"
+        Me.column7.Name = "column7"
+        Me.column7.ReadOnly = True
+        Me.column7.Width = 51
+        '
+        'column8
+        '
+        Me.column8.DataPropertyName = "cidade"
+        Me.column8.HeaderText = "Cidade"
+        Me.column8.Name = "column8"
+        Me.column8.ReadOnly = True
+        Me.column8.Width = 65
+        '
+        'column9
+        '
+        Me.column9.DataPropertyName = "estado"
+        Me.column9.HeaderText = "Estado"
+        Me.column9.Name = "column9"
+        Me.column9.ReadOnly = True
+        Me.column9.Width = 65
+        '
+        'column10
+        '
+        Me.column10.DataPropertyName = "cpf"
+        Me.column10.HeaderText = "CPF"
+        Me.column10.Name = "column10"
+        Me.column10.ReadOnly = True
+        Me.column10.Width = 52
+        '
+        'Column11
+        '
+        Me.Column11.DataPropertyName = "rg"
+        Me.Column11.HeaderText = "RG"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Width = 48
+        '
+        'Column12
+        '
+        Me.Column12.DataPropertyName = "dt_nascimento"
+        Me.Column12.HeaderText = "Nascimento"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Width = 88
+        '
+        'column13
+        '
+        Me.column13.DataPropertyName = "dt_cadastro"
+        Me.column13.HeaderText = "Data Cadastro"
+        Me.column13.Name = "column13"
+        Me.column13.ReadOnly = True
+        '
+        'dtpDataNasc
+        '
+        Me.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataNasc.Location = New System.Drawing.Point(487, 169)
+        Me.dtpDataNasc.Name = "dtpDataNasc"
+        Me.dtpDataNasc.Size = New System.Drawing.Size(108, 20)
+        Me.dtpDataNasc.TabIndex = 35
+        '
+        'dtpDataCad
+        '
+        Me.dtpDataCad.Enabled = False
+        Me.dtpDataCad.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataCad.Location = New System.Drawing.Point(129, 210)
+        Me.dtpDataCad.Name = "dtpDataCad"
+        Me.dtpDataCad.Size = New System.Drawing.Size(149, 20)
+        Me.dtpDataCad.TabIndex = 36
         '
         'frmFuncionarios
         '
@@ -611,8 +669,7 @@ Partial Class frmFuncionarios
     Friend WithEvents btnExcluir As System.Windows.Forms.Button
     Friend WithEvents btnAlterar As System.Windows.Forms.Button
     Friend WithEvents btnGravar As System.Windows.Forms.Button
-    Friend WithEvents mtbDatacad As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents mtbDataNasc As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents column4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -620,4 +677,11 @@ Partial Class frmFuncionarios
     Friend WithEvents column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents column7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents column8 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents column9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents column10 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents column13 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtpDataCad As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDataNasc As System.Windows.Forms.DateTimePicker
 End Class

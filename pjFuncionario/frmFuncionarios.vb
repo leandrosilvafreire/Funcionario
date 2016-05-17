@@ -12,6 +12,7 @@
     Private Sub frmFuncionarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Bd_industriaDataSet.tb_funcionario' table. You can move, or remove it, as needed.
         Me.Tb_funcionarioTableAdapter.Fill(Me.Bd_industriaDataSet.tb_funcionario)
+        dtpDataCad.Text = Format(Date.Now, "dd/MM/yyyy")
 
     End Sub
 
@@ -37,10 +38,11 @@
                 MsgBox("Campo estado em branco!", MsgBoxStyle.Exclamation, "Alerta")
                 txtEstado.Focus()
             Else
-                sql = "Insert into tb_funcionario (nome, Endereco, numero, bairro, complemento, cep, cidade, estado, cpf, rg, dt_nascimento, dt_cadastro) values ("
-                sql = sql & "'" & txtNomeI.Text & "', '" & txtEndereco.Text & "', '" & txtNumero.Text & "', '" & txtBairro.Text & "', '" & txtComplemento.Text & "', "
-                sql = sql & "'" & mtbCep.Text & "', '" & txtCidade.Text & "', '" & txtEstado.Text & "', '" & mtbCpf.Text & "', '" & txtRg.Text & "', "
-                sql = sql & "'" & mtbDataNasc.Text & "', '" & mtbDatacad.Text & "')"
+                sql = "Insert into tb_funcionario (nome, Endereco, numero, bairro, complemento, cep, cidade, estado, cpf, rg, dt_nascimento, dt_cadastro) values ('" & txtNomeI.Text & "', '" & txtEndereco.Text & "', '" & txtNumero.Text & "', '" & txtBairro.Text & "', '" & txtComplemento.Text & "', '" & mtbCep.Text & "', '" & txtCidade.Text & "', '" & txtEstado.Text & "', '" & mtbCpf.Text & "', '" & txtRg.Text & "', '" & dtpDataNasc.Text & "', '" & dtpDataCad.Text & "')"
+
+                'sql = sql & "'" & txtNomeI.Text & "', '" & txtEndereco.Text & "', '" & txtNumero.Text & "', '" & txtBairro.Text & "', '" & txtComplemento.Text & "', "
+                'sql = sql & "'" & mtbCep.Text & "', '" & txtCidade.Text & "', '" & txtEstado.Text & "', '" & mtbCpf.Text & "', '" & txtRg.Text & "', "
+                'sql = sql & "'" & mtbDataNasc.Text & "', '" & mtbDataCad.Text & "')"
 
                 executaSql(sql)
                 MsgBox("Cadastro realizado com sucesso!", MsgBoxStyle.Information, "Alerta")
@@ -57,7 +59,7 @@
 
     Private Sub btnPesquisar_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
         Try
-            sql = "select nome, Endereco, numero, cidade, estado, cpf, dt_cadastro from tb_funcionario"
+            sql = "select nome, Endereco, numero, bairro, complemento, cep, cidade, estado, cpf, rg, dt_nascimento, dt_cadastro from tb_funcionario"
 
             If Not txtNome.Text = String.Empty Then
                 sql = sql & " WHERE nome LIKE '%" & txtNome.Text & "%'"
@@ -85,8 +87,8 @@
         txtBairro.Clear()
         mtbCpf.Clear()
         txtRg.Clear()
-        mtbDataNasc.Text = Format(Date.Now, "dd/MM/yyyy")
-        mtbDatacad.Text = Format(Date.Now, "dd/MM/yyyy")
+        dtpDataNasc.Text = Format(Date.Now, "dd/MM/yyyy")
+        dtpDataCad.Text = Format(Date.Now, "dd/MM/yyyy")
 
 
 
@@ -99,21 +101,32 @@
     Private Sub dgvFuncionario_DoubleClick(sender As Object, e As EventArgs) Handles dgvFuncionario.DoubleClick
         Try
 
-
-            txtNomeI.Text = IIf(dgvFuncionario.SelectedCells.Item(0).Value Is DBNull.Value,
+            txtCodigo.Text = IIf(dgvFuncionario.SelectedCells.Item(0).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(0).Value)
-            txtEndereco.Text = IIf(dgvFuncionario.SelectedCells.Item(1).Value Is DBNull.Value,
+            txtNomeI.Text = IIf(dgvFuncionario.SelectedCells.Item(1).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(1).Value)
-            txtNumero.Text = IIf(dgvFuncionario.SelectedCells.Item(2).Value Is DBNull.Value,
+            txtEndereco.Text = IIf(dgvFuncionario.SelectedCells.Item(2).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(2).Value)
-            txtCidade.Text = IIf(dgvFuncionario.SelectedCells.Item(3).Value Is DBNull.Value,
+            txtNumero.Text = IIf(dgvFuncionario.SelectedCells.Item(3).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(3).Value)
-            txtEstado.Text = IIf(dgvFuncionario.SelectedCells.Item(4).Value Is DBNull.Value,
-                               String.Empty, dgvFuncionario.SelectedCells.Item(4).Value)
-            mtbCpf.Text = IIf(dgvFuncionario.SelectedCells.Item(5).Value Is DBNull.Value,
-                               String.Empty, dgvFuncionario.SelectedCells.Item(5).Value)
-            mtbDatacad.Text = IIf(dgvFuncionario.SelectedCells.Item(6).Value Is DBNull.Value,
+            txtBairro.Text = IIf(dgvFuncionario.SelectedCells.Item(4).Value Is DBNull.Value,
+                              String.Empty, dgvFuncionario.SelectedCells.Item(4).Value)
+            txtComplemento.Text = IIf(dgvFuncionario.SelectedCells.Item(5).Value Is DBNull.Value,
+                              String.Empty, dgvFuncionario.SelectedCells.Item(5).Value)
+            mtbCep.Text = IIf(dgvFuncionario.SelectedCells.Item(6).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(6).Value)
+            txtCidade.Text = IIf(dgvFuncionario.SelectedCells.Item(7).Value Is DBNull.Value,
+                              String.Empty, dgvFuncionario.SelectedCells.Item(7).Value)
+            txtEstado.Text = IIf(dgvFuncionario.SelectedCells.Item(8).Value Is DBNull.Value,
+                               String.Empty, dgvFuncionario.SelectedCells.Item(8).Value)
+            mtbCpf.Text = IIf(dgvFuncionario.SelectedCells.Item(9).Value Is DBNull.Value,
+                               String.Empty, dgvFuncionario.SelectedCells.Item(9).Value)
+            txtRg.Text = IIf(dgvFuncionario.SelectedCells.Item(10).Value Is DBNull.Value,
+                              String.Empty, dgvFuncionario.SelectedCells.Item(10).Value)
+            dtpDataNasc.Text = IIf(dgvFuncionario.SelectedCells.Item(11).Value Is DBNull.Value,
+                              String.Empty, dgvFuncionario.SelectedCells.Item(11).Value)
+            dtpDataCad.Text = IIf(dgvFuncionario.SelectedCells.Item(12).Value Is DBNull.Value,
+                               String.Empty, dgvFuncionario.SelectedCells.Item(12).Value)
 
             tcFuncionario.SelectedTab = tpCadastro
 
@@ -142,9 +155,9 @@
             sql = sql & "estado = '" & txtEstado.Text & "', "
             sql = sql & "cpf = '" & mtbCpf.Text & "', "
             sql = sql & "rg = '" & txtRg.Text & "', "
-            sql = sql & "dt_nascimento = '" & mtbDataNasc.Text & "', "
-            sql = sql & "dt_cadastro = '" & mtbDatacad.Text & "' "
-            sql = sql & "WHERE id_funcionario LIKE '" & txtCodigo.Text & "'"
+            sql = sql & "dt_nascimento = '" & dtpDataNasc.Text = Format(Date.Now, "dd/MM/yyyy") & "', "
+            sql = sql & "dt_cadastro = '" & dtpDataCad.Text & "' "
+            sql = sql & "WHERE id_funcionario LIKE = '" & txtCodigo.Text & "'"
 
             executaSql(sql)
             MsgBox("Alteração realizada com sucesso!", MsgBoxStyle.Information, "Alerta")
@@ -223,11 +236,19 @@
         End Try
     End Sub
 
-    Private Sub MaskedTextBox2_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtbDatacad.MaskInputRejected
-
+    Private Sub MaskedTextBox2_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
     End Sub
 
     Private Sub tpCadastro_Click(sender As Object, e As EventArgs) Handles tpCadastro.Click
+
+    End Sub
+
+    Private Sub frmFuncionarios_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        limpar()
+        funcionarios.Clear()
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpDataNasc.ValueChanged
 
     End Sub
 End Class
