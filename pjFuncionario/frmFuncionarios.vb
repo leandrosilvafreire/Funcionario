@@ -59,7 +59,7 @@
 
     Private Sub btnPesquisar_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
         Try
-            sql = "select nome, Endereco, numero, bairro, complemento, cep, cidade, estado, cpf, rg, dt_nascimento, dt_cadastro from tb_funcionario"
+            sql = "select id_funcionario, nome, Endereco, numero, bairro, complemento, cep, cidade, estado, cpf, rg, dt_nascimento, dt_cadastro from tb_funcionario"
 
             If Not txtNome.Text = String.Empty Then
                 sql = sql & " WHERE nome LIKE '%" & txtNome.Text & "%'"
@@ -101,8 +101,7 @@
     Private Sub dgvFuncionario_DoubleClick(sender As Object, e As EventArgs) Handles dgvFuncionario.DoubleClick
         Try
 
-            txtCodigo.Text = IIf(dgvFuncionario.SelectedCells.Item(0).Value Is DBNull.Value,
-                               String.Empty, dgvFuncionario.SelectedCells.Item(0).Value)
+            txtCodigo.Text = dgvFuncionario.SelectedCells.Item(0).Value
             txtNomeI.Text = IIf(dgvFuncionario.SelectedCells.Item(1).Value Is DBNull.Value,
                                String.Empty, dgvFuncionario.SelectedCells.Item(1).Value)
             txtEndereco.Text = IIf(dgvFuncionario.SelectedCells.Item(2).Value Is DBNull.Value,
@@ -155,9 +154,9 @@
             sql = sql & "estado = '" & txtEstado.Text & "', "
             sql = sql & "cpf = '" & mtbCpf.Text & "', "
             sql = sql & "rg = '" & txtRg.Text & "', "
-            sql = sql & "dt_nascimento = '" & dtpDataNasc.Text = Format(Date.Now, "dd/MM/yyyy") & "', "
+            sql = sql & "dt_nascimento = '" & dtpDataNasc.Text & "', "
             sql = sql & "dt_cadastro = '" & dtpDataCad.Text & "' "
-            sql = sql & "WHERE id_funcionario LIKE = '" & txtCodigo.Text & "'"
+            sql = sql & "WHERE id_funcionario = '" & txtCodigo.Text & "'"
 
             executaSql(sql)
             MsgBox("Alteração realizada com sucesso!", MsgBoxStyle.Information, "Alerta")
@@ -250,5 +249,13 @@
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpDataNasc.ValueChanged
 
+    End Sub
+
+    Private Sub txtNumero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNumero.KeyPress
+        If (Asc(e.KeyChar()) < Asc("0")) Or (Asc(e.KeyChar()) > Asc("9")) Then
+            If (Asc(e.KeyChar()) <> 8) Then
+                e.KeyChar = Chr(0)
+            End If
+        End If
     End Sub
 End Class

@@ -39,10 +39,25 @@ Partial Class frmFuncionarios
         Me.tcFuncionario = New System.Windows.Forms.TabControl()
         Me.tpConsulta = New System.Windows.Forms.TabPage()
         Me.dgvFuncionario = New System.Windows.Forms.DataGridView()
+        Me.column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.lblNome = New System.Windows.Forms.Label()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.tpCadastro = New System.Windows.Forms.TabPage()
+        Me.dtpDataCad = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDataNasc = New System.Windows.Forms.DateTimePicker()
         Me.btnSair = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
@@ -63,21 +78,6 @@ Partial Class frmFuncionarios
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Tb_funcionarioTableAdapter = New pjFuncionario.bd_industriaDataSetTableAdapters.tb_funcionarioTableAdapter()
         Me.TableAdapterManager = New pjFuncionario.bd_industriaDataSetTableAdapters.TableAdapterManager()
-        Me.column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dtpDataNasc = New System.Windows.Forms.DateTimePicker()
-        Me.dtpDataCad = New System.Windows.Forms.DateTimePicker()
         lblCodigo = New System.Windows.Forms.Label()
         lblNomeI = New System.Windows.Forms.Label()
         lblEndereco = New System.Windows.Forms.Label()
@@ -270,238 +270,6 @@ Partial Class frmFuncionarios
         Me.dgvFuncionario.Size = New System.Drawing.Size(592, 258)
         Me.dgvFuncionario.TabIndex = 159
         '
-        'btnPesquisar
-        '
-        Me.btnPesquisar.Font = New System.Drawing.Font("Palatino Linotype", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPesquisar.Location = New System.Drawing.Point(446, 14)
-        Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(115, 35)
-        Me.btnPesquisar.TabIndex = 2
-        Me.btnPesquisar.Text = "Pesquisar"
-        Me.btnPesquisar.UseVisualStyleBackColor = True
-        '
-        'lblNome
-        '
-        Me.lblNome.AutoSize = True
-        Me.lblNome.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNome.Location = New System.Drawing.Point(6, 19)
-        Me.lblNome.Name = "lblNome"
-        Me.lblNome.Size = New System.Drawing.Size(77, 26)
-        Me.lblNome.TabIndex = 1
-        Me.lblNome.Text = "Nome: "
-        '
-        'txtNome
-        '
-        Me.txtNome.Location = New System.Drawing.Point(89, 21)
-        Me.txtNome.Name = "txtNome"
-        Me.txtNome.Size = New System.Drawing.Size(340, 20)
-        Me.txtNome.TabIndex = 0
-        '
-        'tpCadastro
-        '
-        Me.tpCadastro.AutoScroll = True
-        Me.tpCadastro.Controls.Add(Me.dtpDataCad)
-        Me.tpCadastro.Controls.Add(Me.dtpDataNasc)
-        Me.tpCadastro.Controls.Add(Me.btnSair)
-        Me.tpCadastro.Controls.Add(Me.btnCancelar)
-        Me.tpCadastro.Controls.Add(Me.btnExcluir)
-        Me.tpCadastro.Controls.Add(Me.btnAlterar)
-        Me.tpCadastro.Controls.Add(Me.btnGravar)
-        Me.tpCadastro.Controls.Add(Me.mtbCpf)
-        Me.tpCadastro.Controls.Add(Me.mtbCep)
-        Me.tpCadastro.Controls.Add(lblDataCadas)
-        Me.tpCadastro.Controls.Add(lblDataNasc)
-        Me.tpCadastro.Controls.Add(lblRg)
-        Me.tpCadastro.Controls.Add(Me.txtRg)
-        Me.tpCadastro.Controls.Add(lblCpf)
-        Me.tpCadastro.Controls.Add(lblEstado)
-        Me.tpCadastro.Controls.Add(Me.txtEstado)
-        Me.tpCadastro.Controls.Add(lblCidade)
-        Me.tpCadastro.Controls.Add(Me.txtCidade)
-        Me.tpCadastro.Controls.Add(lblCep)
-        Me.tpCadastro.Controls.Add(lblComplemento)
-        Me.tpCadastro.Controls.Add(Me.txtComplemento)
-        Me.tpCadastro.Controls.Add(lblBairro)
-        Me.tpCadastro.Controls.Add(Me.txtBairro)
-        Me.tpCadastro.Controls.Add(lblNumero)
-        Me.tpCadastro.Controls.Add(Me.txtNumero)
-        Me.tpCadastro.Controls.Add(lblEndereco)
-        Me.tpCadastro.Controls.Add(Me.txtEndereco)
-        Me.tpCadastro.Controls.Add(lblNomeI)
-        Me.tpCadastro.Controls.Add(Me.txtNomeI)
-        Me.tpCadastro.Controls.Add(lblCodigo)
-        Me.tpCadastro.Controls.Add(Me.txtCodigo)
-        Me.tpCadastro.Location = New System.Drawing.Point(4, 22)
-        Me.tpCadastro.Name = "tpCadastro"
-        Me.tpCadastro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpCadastro.Size = New System.Drawing.Size(598, 346)
-        Me.tpCadastro.TabIndex = 1
-        Me.tpCadastro.Text = "Cadastro"
-        Me.tpCadastro.UseVisualStyleBackColor = True
-        '
-        'btnSair
-        '
-        Me.btnSair.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSair.Location = New System.Drawing.Point(427, 270)
-        Me.btnSair.Name = "btnSair"
-        Me.btnSair.Size = New System.Drawing.Size(88, 30)
-        Me.btnSair.TabIndex = 34
-        Me.btnSair.Text = "Sair"
-        Me.btnSair.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.Location = New System.Drawing.Point(322, 270)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(87, 30)
-        Me.btnCancelar.TabIndex = 33
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'btnExcluir
-        '
-        Me.btnExcluir.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcluir.Location = New System.Drawing.Point(234, 270)
-        Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(75, 30)
-        Me.btnExcluir.TabIndex = 32
-        Me.btnExcluir.Text = "Excluir"
-        Me.btnExcluir.UseVisualStyleBackColor = True
-        '
-        'btnAlterar
-        '
-        Me.btnAlterar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAlterar.Location = New System.Drawing.Point(137, 270)
-        Me.btnAlterar.Name = "btnAlterar"
-        Me.btnAlterar.Size = New System.Drawing.Size(75, 30)
-        Me.btnAlterar.TabIndex = 31
-        Me.btnAlterar.Text = "Alterar"
-        Me.btnAlterar.UseVisualStyleBackColor = True
-        '
-        'btnGravar
-        '
-        Me.btnGravar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGravar.Location = New System.Drawing.Point(48, 270)
-        Me.btnGravar.Name = "btnGravar"
-        Me.btnGravar.Size = New System.Drawing.Size(75, 30)
-        Me.btnGravar.TabIndex = 30
-        Me.btnGravar.Text = "Gravar"
-        Me.btnGravar.UseVisualStyleBackColor = True
-        '
-        'mtbCpf
-        '
-        Me.mtbCpf.Location = New System.Drawing.Point(234, 168)
-        Me.mtbCpf.Mask = "000.000.000-00"
-        Me.mtbCpf.Name = "mtbCpf"
-        Me.mtbCpf.Size = New System.Drawing.Size(95, 20)
-        Me.mtbCpf.TabIndex = 27
-        Me.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
-        '
-        'mtbCep
-        '
-        Me.mtbCep.Location = New System.Drawing.Point(54, 130)
-        Me.mtbCep.Mask = "00.000-000"
-        Me.mtbCep.Name = "mtbCep"
-        Me.mtbCep.Size = New System.Drawing.Size(96, 20)
-        Me.mtbCep.TabIndex = 26
-        Me.mtbCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
-        '
-        'txtRg
-        '
-        Me.txtRg.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "rg", True))
-        Me.txtRg.Location = New System.Drawing.Point(46, 170)
-        Me.txtRg.Name = "txtRg"
-        Me.txtRg.Size = New System.Drawing.Size(135, 20)
-        Me.txtRg.TabIndex = 21
-        '
-        'Tb_funcionarioBindingSource
-        '
-        Me.Tb_funcionarioBindingSource.DataMember = "tb_funcionario"
-        Me.Tb_funcionarioBindingSource.DataSource = Me.Bd_industriaDataSet
-        '
-        'Bd_industriaDataSet
-        '
-        Me.Bd_industriaDataSet.DataSetName = "bd_industriaDataSet"
-        Me.Bd_industriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'txtEstado
-        '
-        Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "estado", True))
-        Me.txtEstado.Location = New System.Drawing.Point(243, 130)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.Size = New System.Drawing.Size(73, 20)
-        Me.txtEstado.TabIndex = 17
-        '
-        'txtCidade
-        '
-        Me.txtCidade.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "cidade", True))
-        Me.txtCidade.Location = New System.Drawing.Point(403, 128)
-        Me.txtCidade.Name = "txtCidade"
-        Me.txtCidade.Size = New System.Drawing.Size(158, 20)
-        Me.txtCidade.TabIndex = 15
-        '
-        'txtComplemento
-        '
-        Me.txtComplemento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "complemento", True))
-        Me.txtComplemento.Location = New System.Drawing.Point(376, 93)
-        Me.txtComplemento.Name = "txtComplemento"
-        Me.txtComplemento.Size = New System.Drawing.Size(185, 20)
-        Me.txtComplemento.TabIndex = 11
-        '
-        'txtBairro
-        '
-        Me.txtBairro.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "bairro", True))
-        Me.txtBairro.Location = New System.Drawing.Point(67, 93)
-        Me.txtBairro.Name = "txtBairro"
-        Me.txtBairro.Size = New System.Drawing.Size(178, 20)
-        Me.txtBairro.TabIndex = 9
-        '
-        'txtNumero
-        '
-        Me.txtNumero.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "numero", True))
-        Me.txtNumero.Location = New System.Drawing.Point(461, 57)
-        Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.Size = New System.Drawing.Size(100, 20)
-        Me.txtNumero.TabIndex = 7
-        '
-        'txtEndereco
-        '
-        Me.txtEndereco.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "Endereco", True))
-        Me.txtEndereco.Location = New System.Drawing.Point(91, 57)
-        Me.txtEndereco.Name = "txtEndereco"
-        Me.txtEndereco.Size = New System.Drawing.Size(294, 20)
-        Me.txtEndereco.TabIndex = 5
-        '
-        'txtNomeI
-        '
-        Me.txtNomeI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "nome", True))
-        Me.txtNomeI.Location = New System.Drawing.Point(234, 25)
-        Me.txtNomeI.Name = "txtNomeI"
-        Me.txtNomeI.Size = New System.Drawing.Size(327, 20)
-        Me.txtNomeI.TabIndex = 3
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(70, 27)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 1
-        '
-        'Tb_funcionarioTableAdapter
-        '
-        Me.Tb_funcionarioTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.produtosTableAdapter = Nothing
-        Me.TableAdapterManager.tb_funcionarioTableAdapter = Me.Tb_funcionarioTableAdapter
-        Me.TableAdapterManager.tb_usuarioTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = pjFuncionario.bd_industriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'column1
         '
         Me.column1.DataPropertyName = "id_funcionario"
@@ -605,13 +373,74 @@ Partial Class frmFuncionarios
         Me.column13.Name = "column13"
         Me.column13.ReadOnly = True
         '
-        'dtpDataNasc
+        'btnPesquisar
         '
-        Me.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataNasc.Location = New System.Drawing.Point(487, 169)
-        Me.dtpDataNasc.Name = "dtpDataNasc"
-        Me.dtpDataNasc.Size = New System.Drawing.Size(108, 20)
-        Me.dtpDataNasc.TabIndex = 35
+        Me.btnPesquisar.Font = New System.Drawing.Font("Palatino Linotype", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPesquisar.Location = New System.Drawing.Point(446, 14)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(115, 35)
+        Me.btnPesquisar.TabIndex = 2
+        Me.btnPesquisar.Text = "Pesquisar"
+        Me.btnPesquisar.UseVisualStyleBackColor = True
+        '
+        'lblNome
+        '
+        Me.lblNome.AutoSize = True
+        Me.lblNome.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNome.Location = New System.Drawing.Point(6, 19)
+        Me.lblNome.Name = "lblNome"
+        Me.lblNome.Size = New System.Drawing.Size(77, 26)
+        Me.lblNome.TabIndex = 1
+        Me.lblNome.Text = "Nome: "
+        '
+        'txtNome
+        '
+        Me.txtNome.Location = New System.Drawing.Point(89, 21)
+        Me.txtNome.Name = "txtNome"
+        Me.txtNome.Size = New System.Drawing.Size(340, 20)
+        Me.txtNome.TabIndex = 0
+        '
+        'tpCadastro
+        '
+        Me.tpCadastro.AutoScroll = True
+        Me.tpCadastro.Controls.Add(Me.dtpDataCad)
+        Me.tpCadastro.Controls.Add(Me.dtpDataNasc)
+        Me.tpCadastro.Controls.Add(Me.btnSair)
+        Me.tpCadastro.Controls.Add(Me.btnCancelar)
+        Me.tpCadastro.Controls.Add(Me.btnExcluir)
+        Me.tpCadastro.Controls.Add(Me.btnAlterar)
+        Me.tpCadastro.Controls.Add(Me.btnGravar)
+        Me.tpCadastro.Controls.Add(Me.mtbCpf)
+        Me.tpCadastro.Controls.Add(Me.mtbCep)
+        Me.tpCadastro.Controls.Add(lblDataCadas)
+        Me.tpCadastro.Controls.Add(lblDataNasc)
+        Me.tpCadastro.Controls.Add(lblRg)
+        Me.tpCadastro.Controls.Add(Me.txtRg)
+        Me.tpCadastro.Controls.Add(lblCpf)
+        Me.tpCadastro.Controls.Add(lblEstado)
+        Me.tpCadastro.Controls.Add(Me.txtEstado)
+        Me.tpCadastro.Controls.Add(lblCidade)
+        Me.tpCadastro.Controls.Add(Me.txtCidade)
+        Me.tpCadastro.Controls.Add(lblCep)
+        Me.tpCadastro.Controls.Add(lblComplemento)
+        Me.tpCadastro.Controls.Add(Me.txtComplemento)
+        Me.tpCadastro.Controls.Add(lblBairro)
+        Me.tpCadastro.Controls.Add(Me.txtBairro)
+        Me.tpCadastro.Controls.Add(lblNumero)
+        Me.tpCadastro.Controls.Add(Me.txtNumero)
+        Me.tpCadastro.Controls.Add(lblEndereco)
+        Me.tpCadastro.Controls.Add(Me.txtEndereco)
+        Me.tpCadastro.Controls.Add(lblNomeI)
+        Me.tpCadastro.Controls.Add(Me.txtNomeI)
+        Me.tpCadastro.Controls.Add(lblCodigo)
+        Me.tpCadastro.Controls.Add(Me.txtCodigo)
+        Me.tpCadastro.Location = New System.Drawing.Point(4, 22)
+        Me.tpCadastro.Name = "tpCadastro"
+        Me.tpCadastro.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpCadastro.Size = New System.Drawing.Size(598, 346)
+        Me.tpCadastro.TabIndex = 1
+        Me.tpCadastro.Text = "Cadastro"
+        Me.tpCadastro.UseVisualStyleBackColor = True
         '
         'dtpDataCad
         '
@@ -621,6 +450,179 @@ Partial Class frmFuncionarios
         Me.dtpDataCad.Name = "dtpDataCad"
         Me.dtpDataCad.Size = New System.Drawing.Size(149, 20)
         Me.dtpDataCad.TabIndex = 36
+        '
+        'dtpDataNasc
+        '
+        Me.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataNasc.Location = New System.Drawing.Point(487, 169)
+        Me.dtpDataNasc.Name = "dtpDataNasc"
+        Me.dtpDataNasc.Size = New System.Drawing.Size(108, 20)
+        Me.dtpDataNasc.TabIndex = 35
+        '
+        'btnSair
+        '
+        Me.btnSair.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSair.Location = New System.Drawing.Point(427, 270)
+        Me.btnSair.Name = "btnSair"
+        Me.btnSair.Size = New System.Drawing.Size(88, 30)
+        Me.btnSair.TabIndex = 34
+        Me.btnSair.Text = "Sair"
+        Me.btnSair.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.Location = New System.Drawing.Point(322, 270)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(87, 30)
+        Me.btnCancelar.TabIndex = 33
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnExcluir
+        '
+        Me.btnExcluir.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExcluir.Location = New System.Drawing.Point(234, 270)
+        Me.btnExcluir.Name = "btnExcluir"
+        Me.btnExcluir.Size = New System.Drawing.Size(75, 30)
+        Me.btnExcluir.TabIndex = 32
+        Me.btnExcluir.Text = "Excluir"
+        Me.btnExcluir.UseVisualStyleBackColor = True
+        '
+        'btnAlterar
+        '
+        Me.btnAlterar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAlterar.Location = New System.Drawing.Point(137, 270)
+        Me.btnAlterar.Name = "btnAlterar"
+        Me.btnAlterar.Size = New System.Drawing.Size(75, 30)
+        Me.btnAlterar.TabIndex = 31
+        Me.btnAlterar.Text = "Alterar"
+        Me.btnAlterar.UseVisualStyleBackColor = True
+        '
+        'btnGravar
+        '
+        Me.btnGravar.Font = New System.Drawing.Font("Palatino Linotype", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGravar.Location = New System.Drawing.Point(48, 270)
+        Me.btnGravar.Name = "btnGravar"
+        Me.btnGravar.Size = New System.Drawing.Size(75, 30)
+        Me.btnGravar.TabIndex = 30
+        Me.btnGravar.Text = "Gravar"
+        Me.btnGravar.UseVisualStyleBackColor = True
+        '
+        'mtbCpf
+        '
+        Me.mtbCpf.Location = New System.Drawing.Point(234, 168)
+        Me.mtbCpf.Mask = "000.000.000-00"
+        Me.mtbCpf.Name = "mtbCpf"
+        Me.mtbCpf.Size = New System.Drawing.Size(95, 20)
+        Me.mtbCpf.TabIndex = 27
+        Me.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'mtbCep
+        '
+        Me.mtbCep.Location = New System.Drawing.Point(54, 130)
+        Me.mtbCep.Mask = "00.000-000"
+        Me.mtbCep.Name = "mtbCep"
+        Me.mtbCep.Size = New System.Drawing.Size(96, 20)
+        Me.mtbCep.TabIndex = 26
+        Me.mtbCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'txtRg
+        '
+        Me.txtRg.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "rg", True))
+        Me.txtRg.Location = New System.Drawing.Point(46, 170)
+        Me.txtRg.Name = "txtRg"
+        Me.txtRg.Size = New System.Drawing.Size(135, 20)
+        Me.txtRg.TabIndex = 21
+        '
+        'Tb_funcionarioBindingSource
+        '
+        Me.Tb_funcionarioBindingSource.DataMember = "tb_funcionario"
+        Me.Tb_funcionarioBindingSource.DataSource = Me.Bd_industriaDataSet
+        '
+        'Bd_industriaDataSet
+        '
+        Me.Bd_industriaDataSet.DataSetName = "bd_industriaDataSet"
+        Me.Bd_industriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'txtEstado
+        '
+        Me.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEstado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "estado", True))
+        Me.txtEstado.Location = New System.Drawing.Point(243, 130)
+        Me.txtEstado.Name = "txtEstado"
+        Me.txtEstado.Size = New System.Drawing.Size(73, 20)
+        Me.txtEstado.TabIndex = 17
+        '
+        'txtCidade
+        '
+        Me.txtCidade.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "cidade", True))
+        Me.txtCidade.Location = New System.Drawing.Point(403, 128)
+        Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.Size = New System.Drawing.Size(189, 20)
+        Me.txtCidade.TabIndex = 15
+        '
+        'txtComplemento
+        '
+        Me.txtComplemento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "complemento", True))
+        Me.txtComplemento.Location = New System.Drawing.Point(376, 93)
+        Me.txtComplemento.Name = "txtComplemento"
+        Me.txtComplemento.Size = New System.Drawing.Size(216, 20)
+        Me.txtComplemento.TabIndex = 11
+        '
+        'txtBairro
+        '
+        Me.txtBairro.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "bairro", True))
+        Me.txtBairro.Location = New System.Drawing.Point(67, 93)
+        Me.txtBairro.Name = "txtBairro"
+        Me.txtBairro.Size = New System.Drawing.Size(178, 20)
+        Me.txtBairro.TabIndex = 9
+        '
+        'txtNumero
+        '
+        Me.txtNumero.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "numero", True))
+        Me.txtNumero.Location = New System.Drawing.Point(461, 57)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(131, 20)
+        Me.txtNumero.TabIndex = 7
+        '
+        'txtEndereco
+        '
+        Me.txtEndereco.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "Endereco", True))
+        Me.txtEndereco.Location = New System.Drawing.Point(91, 57)
+        Me.txtEndereco.Name = "txtEndereco"
+        Me.txtEndereco.Size = New System.Drawing.Size(294, 20)
+        Me.txtEndereco.TabIndex = 5
+        '
+        'txtNomeI
+        '
+        Me.txtNomeI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tb_funcionarioBindingSource, "nome", True))
+        Me.txtNomeI.Location = New System.Drawing.Point(234, 25)
+        Me.txtNomeI.Name = "txtNomeI"
+        Me.txtNomeI.Size = New System.Drawing.Size(358, 20)
+        Me.txtNomeI.TabIndex = 3
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(70, 27)
+        Me.txtCodigo.MaxLength = 18
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtCodigo.TabIndex = 65
+        '
+        'Tb_funcionarioTableAdapter
+        '
+        Me.Tb_funcionarioTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.produtosTableAdapter = Nothing
+        Me.TableAdapterManager.tb_funcionarioTableAdapter = Me.Tb_funcionarioTableAdapter
+        Me.TableAdapterManager.tb_usuarioTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = pjFuncionario.bd_industriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmFuncionarios
         '
